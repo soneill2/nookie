@@ -240,13 +240,28 @@ function setupMusicPlayer() {
     bgMusic.volume = config.music.volume || 0.5;
     bgMusic.load();
 
-    // Try autoplay if enabled
+    // Try autoplay if enabled (browsers often block until user interaction)
     if (config.music.autoplay) {
+        const tryPlay = () => {
+            bgMusic.play().then(() => {
+                musicToggle.textContent = config.music.stopText;
+            }).catch(() => {});
+        };
         const playPromise = bgMusic.play();
         if (playPromise !== undefined) {
-            playPromise.catch(error => {
-                console.log("Autoplay prevented by browser");
-                musicToggle.textContent = config.music.startText;
+            playPromise.then(() => {
+                musicToggle.textContent = config.music.stopText;
+            }).catch(() => {
+                // Start on first click/tap/key anywhere so music begins as soon as they use the site
+                const startOnInteraction = () => {
+                    tryPlay();
+                    document.removeEventListener('click', startOnInteraction);
+                    document.removeEventListener('touchstart', startOnInteraction);
+                    document.removeEventListener('keydown', startOnInteraction);
+                };
+                document.addEventListener('click', startOnInteraction, { once: true });
+                document.addEventListener('touchstart', startOnInteraction, { once: true });
+                document.addEventListener('keydown', startOnInteraction, { once: true });
             });
         }
     }

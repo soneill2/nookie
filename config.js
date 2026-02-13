@@ -20,21 +20,22 @@ const CONFIG = {
 
     // Floating images in the background (same float animation as emojis)
     // Use image URLs (local paths or full URLs). Optional "size" in px (default 50px).
+    // Image sizes reduced by 70% (30% of original) for subtler background
     floatingImages: [
-        { url: "images/chip.jpg", size: "140px" },
-        { url: "images/IMG_0035.JPG", size: "140px" },
-        { url: "images/IMG_0145.JPG", size: "140px" },
-        { url: "images/IMG_0159.JPG", size: "140px" },
-        { url: "images/IMG_1261.JPG", size: "140px" },
-        { url: "images/IMG_2187.JPG", size: "140px" },
-        { url: "images/IMG_2977.JPG", size: "140px" },
-        { url: "images/IMG_3280.JPG", size: "140px" },
-        { url: "images/IMG_3561.JPG", size: "140px" },
-        { url: "images/IMG_3649.JPEG", size: "140px" },
-        { url: "images/IMG_4996.JPG", size: "140px" },
-        { url: "images/IMG_6044.JPG", size: "140px" },
-        { url: "images/IMG_6094.JPEG", size: "140px" },
-        { url: "images/IMG_6095.JPEG", size: "140px" }
+        { url: "images/chip.jpg", size: "42px" },
+        { url: "images/IMG_0035.JPG", size: "42px" },
+        { url: "images/IMG_0145.JPG", size: "42px" },
+        { url: "images/IMG_0159.JPG", size: "42px" },
+        { url: "images/IMG_1261.JPG", size: "42px" },
+        { url: "images/IMG_2187.JPG", size: "42px" },
+        { url: "images/IMG_2977.JPG", size: "42px" },
+        { url: "images/IMG_3280.JPG", size: "42px" },
+        { url: "images/IMG_3561.JPG", size: "42px" },
+        { url: "images/IMG_3649.JPEG", size: "42px" },
+        { url: "images/IMG_4996.JPG", size: "42px" },
+        { url: "images/IMG_6044.JPG", size: "42px" },
+        { url: "images/IMG_6094.JPEG", size: "42px" },
+        { url: "images/IMG_6095.JPEG", size: "42px" }
     ],
 
     // Questions and answers
